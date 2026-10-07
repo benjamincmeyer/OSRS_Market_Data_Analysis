@@ -1,0 +1,16 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+~$*
+# Original school submission and contextual workbook stay local.
+*.docx
+*.xlsx
+# Root CSV copies stay local; the canonical snapshot is in data/.
+/osrs_market_data_raw.csv
+/osrs_market_data_processed.csv
