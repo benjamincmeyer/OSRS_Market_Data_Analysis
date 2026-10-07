@@ -1,0 +1,20 @@
+{
+  "collection_started_utc": null,
+  "collection_completed_utc": null,
+  "original_dependencies": null,
+  "provenance_note": "Historical school-project snapshot. Original collection time and dependency versions were not recorded. Coverage and checksum are verified from the preserved CSV.",
+  "api_base_url": "https://prices.runescape.wiki/api/v1/osrs",
+  "endpoints": [
+    "/mapping",
+    "/timeseries"
+  ],
+  "timestep": "24h",
+  "coverage": {
+    "observations": 2920,
+    "items": 8,
+    "start_date_utc": "2025-08-26",
+    "end_date_utc": "2026-08-25",
+    "observations_per_item": 365
+  },
+  "csv_sha256": "d7125a2fcbd0c0db204a833621d244ad012b4dd422505758b51b6cea383f04ae"
+}

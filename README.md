@@ -98,3 +98,19 @@ Market data were collected from the [OSRS Wiki real-time price API](https://olds
 The original report contains its own references and an acknowledgment of ChatGPT assistance. That acknowledgment is preserved in the Markdown version. The public baseline preparation verified all four offline scripts, reproduced the processed CSV within floating-point tolerance, and regenerated five figures. The dependency list is not an exact lockfile of the original school environment.
 
 The first workflow revision was verified from outside the project directory with network requests disabled. It reproduced the processed CSV within floating-point tolerance and all five figures pixel for pixel. Separate fixture checks verified that collection refuses existing files and defaults to a new snapshot directory.
+
+## Data validation and tests
+
+Before generating outputs, the historical workflow checks required fields, finite numeric values, positive prices and item IDs, nonnegative whole-number volumes, identifier consistency, duplicate item/timestamp pairs, UTC daily intervals, a shared observation period, and the configured eight items and fixed historical dates. Each item needs at least seven observations and a positive first-seven-day volume baseline. Zero-volume days are allowed when that baseline is positive. Input rows are not silently discarded or imputed.
+
+New collections follow the same complete-daily-snapshot rules and must match the requested items. Missing prices, gaps, unequal coverage, and malformed API responses produce an error rather than a misleading analysis. This is an intentionally strict policy for this study, not a claim that all valid API responses will have complete coverage. Failed validation leaves existing analysis outputs unchanged.
+
+Each new snapshot has a `.metadata.json` sidecar containing collection times in UTC, API parameters, item IDs, observed coverage, Python and dependency versions, and the CSV SHA-256 checksum. Historical metadata records only what can be established from the stored snapshot; unavailable original collection details are marked null.
+
+Run the offline tests from the repository directory:
+
+```sh
+python -m unittest discover -s tests -v
+```
+
+The tests include historical result regression, invalid measurements, daily gaps, duplicate observations, unusable baselines, malformed API payloads, output preservation, and snapshot provenance. API tests use fixtures and make no live requests.

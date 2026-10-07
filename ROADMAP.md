@@ -11,14 +11,14 @@ The initial public commit preserves the original analysis and historical data. R
 
 Completed: `python run_analysis.py` rebuilds the historical analysis offline, paths are anchored to the project directory, `--show` controls chart windows, and collection saves to a new snapshot while refusing existing output files. Regression checks reproduced the data and all five figures.
 
-## 2. Strengthen data validation and provenance
+## 2. Strengthen data validation and provenance — completed
 
 - Validate required fields, numeric ranges, item/timestamp uniqueness, chronological coverage, and daily gaps.
 - Handle missing or zero price and volume baselines explicitly rather than producing invalid indices.
 - Record collection time, API parameters, observed date range, and dependency versions for new snapshots.
 - Add focused tests for normalization, malformed API responses, missing intervals, and snapshot preservation.
 
-Done when invalid data fail with useful messages and the existing snapshot reproduces unchanged.
+Completed: invalid data fail before historical outputs are written, new snapshots include provenance sidecars, and ten offline tests cover regression and failure cases. The full historical run preserves the processed data and all five chart images.
 
 ## 3. Improve the visuals and written analysis
 

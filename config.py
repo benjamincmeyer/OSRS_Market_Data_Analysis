@@ -10,3 +10,5 @@ F2P_ITEMS = ['Yew logs', 'Swordfish', 'Ruby necklace', 'Pie shell']
 P2P_ITEMS = ['Shark', 'Dragon bones', "Zulrah's scales", 'Blood rune']
 ITEMS = F2P_ITEMS + P2P_ITEMS
 BASE_URL = 'https://prices.runescape.wiki/api/v1/osrs'
+HISTORICAL_START = '2025-08-26'
+HISTORICAL_END = '2026-08-25'
