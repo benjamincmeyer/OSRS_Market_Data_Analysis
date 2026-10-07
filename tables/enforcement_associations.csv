@@ -1,0 +1,65 @@
+item_name,enforcement_metric,market_metric,transform,n_months_or_changes,pearson_r
+Blood rune,macro_bans,mean_midpoint_price,levels,6,-0.8207237458240265
+Blood rune,macro_bans,mean_midpoint_price,first_differences,5,0.08155605591326899
+Blood rune,macro_bans,mean_daily_volume,levels,6,0.34969444957277196
+Blood rune,macro_bans,mean_daily_volume,first_differences,5,0.29000643438567797
+Blood rune,rwt_bans,mean_midpoint_price,levels,6,0.2545139410466777
+Blood rune,rwt_bans,mean_midpoint_price,first_differences,5,0.9555642319580913
+Blood rune,rwt_bans,mean_daily_volume,levels,6,-0.6443070755686124
+Blood rune,rwt_bans,mean_daily_volume,first_differences,5,-0.48532549717731
+Dragon bones,macro_bans,mean_midpoint_price,levels,6,-0.9001594454138372
+Dragon bones,macro_bans,mean_midpoint_price,first_differences,5,-0.4949857997018822
+Dragon bones,macro_bans,mean_daily_volume,levels,6,0.6088406732165529
+Dragon bones,macro_bans,mean_daily_volume,first_differences,5,-0.08140803233200851
+Dragon bones,rwt_bans,mean_midpoint_price,levels,6,0.05779543065914435
+Dragon bones,rwt_bans,mean_midpoint_price,first_differences,5,-0.3345947643642116
+Dragon bones,rwt_bans,mean_daily_volume,levels,6,-0.5455343638446765
+Dragon bones,rwt_bans,mean_daily_volume,first_differences,5,-0.575957709910652
+Pie shell,macro_bans,mean_midpoint_price,levels,6,0.24816038618453007
+Pie shell,macro_bans,mean_midpoint_price,first_differences,5,-0.004641079865123264
+Pie shell,macro_bans,mean_daily_volume,levels,6,0.9116650024056651
+Pie shell,macro_bans,mean_daily_volume,first_differences,5,0.8217345452740047
+Pie shell,rwt_bans,mean_midpoint_price,levels,6,-0.8922575567075479
+Pie shell,rwt_bans,mean_midpoint_price,first_differences,5,-0.9152348960614712
+Pie shell,rwt_bans,mean_daily_volume,levels,6,-0.31346085125281953
+Pie shell,rwt_bans,mean_daily_volume,first_differences,5,-0.4870623856203612
+Ruby necklace,macro_bans,mean_midpoint_price,levels,6,0.748102916514464
+Ruby necklace,macro_bans,mean_midpoint_price,first_differences,5,-0.03209708920054176
+Ruby necklace,macro_bans,mean_daily_volume,levels,6,0.015374766506075744
+Ruby necklace,macro_bans,mean_daily_volume,first_differences,5,0.5598079424877536
+Ruby necklace,rwt_bans,mean_midpoint_price,levels,6,0.08282217743405562
+Ruby necklace,rwt_bans,mean_midpoint_price,first_differences,5,-0.03352904630480736
+Ruby necklace,rwt_bans,mean_daily_volume,levels,6,-0.10877321885434578
+Ruby necklace,rwt_bans,mean_daily_volume,first_differences,5,0.06999431120939661
+Shark,macro_bans,mean_midpoint_price,levels,6,-0.48691698195634375
+Shark,macro_bans,mean_midpoint_price,first_differences,5,0.6225168861691351
+Shark,macro_bans,mean_daily_volume,levels,6,0.49029603897411855
+Shark,macro_bans,mean_daily_volume,first_differences,5,0.25589296683929846
+Shark,rwt_bans,mean_midpoint_price,levels,6,-0.22037665455740488
+Shark,rwt_bans,mean_midpoint_price,first_differences,5,-0.28808011789017024
+Shark,rwt_bans,mean_daily_volume,levels,6,-0.606334186790953
+Shark,rwt_bans,mean_daily_volume,first_differences,5,-0.4947527102106825
+Swordfish,macro_bans,mean_midpoint_price,levels,6,0.1940974646292868
+Swordfish,macro_bans,mean_midpoint_price,first_differences,5,-0.949404108163375
+Swordfish,macro_bans,mean_daily_volume,levels,6,0.5740213548101865
+Swordfish,macro_bans,mean_daily_volume,first_differences,5,-0.13793609287675446
+Swordfish,rwt_bans,mean_midpoint_price,levels,6,-0.38053143462048156
+Swordfish,rwt_bans,mean_midpoint_price,first_differences,5,-0.10269328712084705
+Swordfish,rwt_bans,mean_daily_volume,levels,6,-0.5510889239129778
+Swordfish,rwt_bans,mean_daily_volume,first_differences,5,-0.5095364123293322
+Yew logs,macro_bans,mean_midpoint_price,levels,6,-0.3595629732120724
+Yew logs,macro_bans,mean_midpoint_price,first_differences,5,-0.7948602807052935
+Yew logs,macro_bans,mean_daily_volume,levels,6,0.7916123781213054
+Yew logs,macro_bans,mean_daily_volume,first_differences,5,0.4603480896319138
+Yew logs,rwt_bans,mean_midpoint_price,levels,6,-0.5332563139756052
+Yew logs,rwt_bans,mean_midpoint_price,first_differences,5,-0.3798169280502924
+Yew logs,rwt_bans,mean_daily_volume,levels,6,-0.47142818635784944
+Yew logs,rwt_bans,mean_daily_volume,first_differences,5,-0.6787201165169123
+Zulrah's scales,macro_bans,mean_midpoint_price,levels,6,0.8978253947760321
+Zulrah's scales,macro_bans,mean_midpoint_price,first_differences,5,0.6597965908352468
+Zulrah's scales,macro_bans,mean_daily_volume,levels,6,0.3775719679499768
+Zulrah's scales,macro_bans,mean_daily_volume,first_differences,5,0.23036521723784253
+Zulrah's scales,rwt_bans,mean_midpoint_price,levels,6,-0.053437561367624876
+Zulrah's scales,rwt_bans,mean_midpoint_price,first_differences,5,-0.35035644541906685
+Zulrah's scales,rwt_bans,mean_daily_volume,levels,6,-0.6593299898977253
+Zulrah's scales,rwt_bans,mean_daily_volume,first_differences,5,-0.5324286795092147

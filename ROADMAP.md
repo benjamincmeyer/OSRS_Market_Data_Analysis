@@ -30,7 +30,7 @@ Completed: invalid data fail before historical outputs are written, new snapshot
 
 Completed: separate item panels with daily and trailing seven-day views, explicit mean-daily calendar comparisons, seven-versus-28-day endpoint checks, and a generated report linked to both CSV tables. The report highlights exceptions and preserves association-versus-causation limits. The original report and charts remain available.
 
-## 4. Explore the enforcement question
+## 4. Explore the enforcement question — initial comparison completed
 
 - Review the local enforcement workbook against dated official sources before incorporating it.
 - Distinguish monthly counts from cumulative year-to-date figures, macro bans from RWT bans, and account categories from item accessibility.
@@ -39,3 +39,5 @@ Completed: separate item panels with daily and trailing seven-day views, explici
 - Consider a broader item sample and a longer time window before stronger claims.
 
 Done when source provenance and time alignment are documented and the results clearly distinguish association from causation. Ban counts alone do not establish enforcement effectiveness or an exogenous treatment.
+
+Completed initial scope: February–July monthly source verification, explicit workbook audit, complete-market-month alignment, separate macro/RWT correlations in levels and first differences, and a generated timeline and report. January verification, longer time coverage, a broader item sample, and control variables remain future research. Wealth correlations remain deferred because the source metric changes labels.

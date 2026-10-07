@@ -8,10 +8,12 @@ The historical snapshot contains **2,920 daily observations**, with **365 observ
 
 The scripts inspect raw market observations, construct a midpoint of the reported high and low transaction averages, combine the two reported volume categories, and compare indexed price and volume histories. Price indices begin at 100 for each item. Volume indices use the mean of each item's first seven observations as 100.
 
-The report discusses market changes alongside anti-cheat enforcement. The current scripts do not incorporate enforcement statistics into a statistical model, and the results do not establish that enforcement caused the observed changes. The selected items are a small sample of the economy, and the API observations are not a complete census of Grand Exchange transactions.
+The report discusses market changes alongside anti-cheat enforcement. The workflow now aligns six verified monthly enforcement observations with market data and generates descriptive correlations in levels and month-to-month changes. The results do not establish that enforcement caused the observed changes. The selected items are a small sample of the economy, and the API observations are not a complete census of Grand Exchange transactions.
 
 ## Read the analysis
 
+- [Enforcement and market associations](docs/enforcement_associations.md)
+- [Enforcement source audit](docs/enforcement_source_audit.md)
 - [Quantified trends and baseline sensitivity](docs/trend_comparisons.md)
 - [Original school report, converted to Markdown](docs/original_report.md)
 - [Public revision roadmap](ROADMAP.md)
@@ -49,7 +51,7 @@ python -m pip install -r requirements.txt
 python run_analysis.py
 ```
 
-This command inspects the saved raw data, rebuilds the processed CSV, and saves seven charts in `figures/`, two comparison tables in `tables/`, and a generated trend report in `docs/` without opening windows or accessing the network. Paths are anchored to the project directory, so the script also works when called by its full path from another folder.
+This command inspects the saved raw data, rebuilds the processed CSV, and saves eight charts in `figures/`, four comparison tables in `tables/`, and two generated analysis reports in `docs/` without opening windows or accessing the network. Paths are anchored to the project directory, so the script also works when called by its full path from another folder.
 
 To display the charts while saving them:
 
@@ -88,9 +90,10 @@ The collector identifies itself with a User-Agent. Update that identifier for yo
 | `process.py` | Construct dates, midpoint prices, total volume, and indices |
 | `plot.py` | Save original indexed price and volume charts |
 | `compare.py` | Generate item panels, descriptive comparisons, sensitivity tables, and the trend report |
+| `enforcement.py` | Align verified monthly enforcement figures with market observations and generate descriptive associations |
 | `data/` | Fixed raw snapshot and reproducible processed data |
-| `figures/` | Five original charts and two new item-panel charts |
-| `tables/` | Calendar-window comparisons and endpoint sensitivity checks |
+| `figures/` | Five original charts, two item-panel charts, and an enforcement timeline |
+| `tables/` | Calendar comparisons, endpoint sensitivity, aligned enforcement observations, and correlations |
 
 The original numbered scripts are available in the `school-project-baseline` tag. The Word submission and contextual enforcement workbook remain local; they are not runtime dependencies.
 
@@ -125,3 +128,13 @@ Relative to September–December 2025, July 2026 mean daily observed volume is l
 July mean midpoint prices are higher for Blood runes, Dragon bones, and Sharks, and lower for Zulrah's scales. Among the F2P-accessible items, Swordfish prices are higher while Yew logs, Ruby necklaces, and Pie shells are lower. This supports different price patterns across the selected markets rather than uniformly stagnant F2P prices.
 
 The generated report gives each item's changes and the exact comparison windows. Comparing mean levels does not establish a steady within-period decline, reduced volatility, statistical significance, or an enforcement effect. The original narrative remains available for comparison as the study develops.
+
+## Enforcement context
+
+The verified analysis covers February–July 2026 and uses archived Jagex monthly OSRS figures. January's cited archive was unavailable during review, so January is retained in the workbook transcription but excluded from comparisons. Months without enforcement observations are not treated as zero, and partial market months are excluded.
+
+The source audit documents corrected wealth-removal units, rounding, and inconsistencies between summed monthly values and published year-to-date values. Monthly figures are used directly rather than reconstructed from cumulative totals. The wealth metric changes source labels, so it is retained as context and excluded from correlations until continuity of its definition is established.
+
+Macro and RWT bans are compared separately with monthly mean daily observed volume and midpoint price. Level correlations use six months; first-difference correlations use five monthly changes. This short observational series supports descriptive exploration rather than causal or predictive inference. Item accessibility does not identify the account types trading those goods.
+
+The published inputs include the original workbook transcription, the verified monthly CSV, and source provenance. Excel is not required to run the analysis, and the original workbook remains unchanged locally. Fifteen offline tests cover historical regression, invalid inputs, complete-month alignment, cumulative-count rejection, and correlation sample sizes.

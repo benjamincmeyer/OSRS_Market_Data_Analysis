@@ -1,0 +1,40 @@
+{
+  "reviewed_on": "2026-10-07",
+  "sources": [
+    {
+      "month": "2026-01",
+      "source_url": "https://archive.ph/jh8Qu",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "month": "2026-02",
+      "source_url": "https://web.archive.org/web/20260304165243/https://support.runescape.com/hc/en-gb/articles/34686319959441-Player-Support-Anti-Cheating-Statistics",
+      "source_sha256": "b680fd739003f0857a7d56f7c0442030bda157e189de3cdee9c0594897cfd4a3"
+    },
+    {
+      "month": "2026-03",
+      "source_url": "https://web.archive.org/web/20260410185304/https://support.runescape.com/hc/en-gb/articles/34686319959441-Player-Support-Anti-Cheating-Statistics",
+      "source_sha256": "5b65f416ef4571c04612d0d0df3db2778234a5a0508318233c3caf0a596d4e9a"
+    },
+    {
+      "month": "2026-04",
+      "source_url": "https://web.archive.org/web/20260509025717/https://support.runescape.com/hc/en-gb/articles/34686319959441-Player-Support-Anti-Cheating-Statistics",
+      "source_sha256": "519b9d096b5add53a8f1511551170eba33cf72bd37ad44dafa976ec7f85327c4"
+    },
+    {
+      "month": "2026-05",
+      "source_url": "https://web.archive.org/web/20260608011747/https://support.runescape.com/hc/en-gb/articles/46608582202001-Anti-Cheating-Statistics",
+      "source_sha256": "5ebf86a25231d5229a139fe8ab5b06c40cf73ccc360c095f790d7feb029f09e5"
+    },
+    {
+      "month": "2026-06",
+      "source_url": "https://web.archive.org/web/20260715140434/https://support.runescape.com/hc/en-gb/articles/46608582202001-Anti-Cheating-Statistics",
+      "source_sha256": "c2a145387dd9b5329bcd13914f592558a63eedd1f04372775f8bc7d44eec80bc"
+    },
+    {
+      "month": "2026-07",
+      "source_url": "https://web.archive.org/web/20260813140026/https://support.runescape.com/hc/en-gb/articles/46608582202001-Anti-Cheating-Statistics",
+      "source_sha256": "adc201823ec3badadb8679095953fea19309400b1f31c044cf01302e0bd796dc"
+    }
+  ]
+}
