@@ -13,6 +13,7 @@ def main():
     from inspect_data import inspect_structure, inspect_data_quality, descriptive_statistics, plot_price_distribution
     from process import process_data
     from plot import plot_all
+    from compare import generate_comparisons
     df = pd.read_csv(RAW_FILE)
     try:
         processed = process_data(df, expected_items=ITEMS, expected_start=HISTORICAL_START, expected_end=HISTORICAL_END)
@@ -24,7 +25,8 @@ def main():
     plot_price_distribution(df, show=args.show)
     processed.to_csv(PROCESSED_FILE, index=False)
     plot_all(processed, show=args.show)
-    print(f'Analysis complete: {len(processed):,} observations; five figures saved.')
+    generate_comparisons(processed, show=args.show)
+    print(f'Analysis complete: {len(processed):,} observations; seven figures, two comparison tables, and a trend report saved.')
 
 if __name__ == '__main__':
     main()

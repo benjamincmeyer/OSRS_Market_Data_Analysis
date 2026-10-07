@@ -12,14 +12,15 @@ The report discusses market changes alongside anti-cheat enforcement. The curren
 
 ## Read the analysis
 
+- [Quantified trends and baseline sensitivity](docs/trend_comparisons.md)
 - [Original school report, converted to Markdown](docs/original_report.md)
 - [Public revision roadmap](ROADMAP.md)
 
-![Indexed prices for members-only items](figures/p2p_indexed_price_time_series.png)
+![Price trends by item](figures/price_small_multiples.png)
 
-![Indexed observed volume for free-to-play-accessible items](figures/f2p_indexed_volume_time_series.png)
+![Observed volume trends by item](figures/volume_small_multiples.png)
 
-The midpoint is an unweighted average of two reported transaction-price averages, rather than a volume-weighted market price. Indices depend on the chosen baseline period. The daily lines are intentionally preserved here; clearer charts and sensitivity checks are planned revisions.
+The midpoint is an unweighted average of two reported transaction-price averages, rather than a volume-weighted market price. Indices depend on the chosen baseline period. The new charts show daily measurements and trailing seven-day means in separate panels, with each item indexed to its first 28-day mean. The five original charts retain their original normalization. Calendar-window comparisons and seven-versus-28-day endpoint checks are generated alongside them.
 
 ## Reproduce the historical analysis
 
@@ -48,7 +49,7 @@ python -m pip install -r requirements.txt
 python run_analysis.py
 ```
 
-This command inspects the saved raw data, rebuilds the processed CSV, and saves all five charts in `figures/` without opening windows or accessing the network. Paths are anchored to the project directory, so the script also works when called by its full path from another folder.
+This command inspects the saved raw data, rebuilds the processed CSV, and saves seven charts in `figures/`, two comparison tables in `tables/`, and a generated trend report in `docs/` without opening windows or accessing the network. Paths are anchored to the project directory, so the script also works when called by its full path from another folder.
 
 To display the charts while saving them:
 
@@ -85,9 +86,11 @@ The collector identifies itself with a User-Agent. Update that identifier for yo
 | `collect.py` | Collect a separate new market snapshot |
 | `inspect_data.py` | Inspect raw data and save the price distribution chart |
 | `process.py` | Construct dates, midpoint prices, total volume, and indices |
-| `plot.py` | Save indexed price and volume charts |
+| `plot.py` | Save original indexed price and volume charts |
+| `compare.py` | Generate item panels, descriptive comparisons, sensitivity tables, and the trend report |
 | `data/` | Fixed raw snapshot and reproducible processed data |
-| `figures/` | Five generated charts |
+| `figures/` | Five original charts and two new item-panel charts |
+| `tables/` | Calendar-window comparisons and endpoint sensitivity checks |
 
 The original numbered scripts are available in the `school-project-baseline` tag. The Word submission and contextual enforcement workbook remain local; they are not runtime dependencies.
 
@@ -114,3 +117,11 @@ python -m unittest discover -s tests -v
 ```
 
 The tests include historical result regression, invalid measurements, daily gaps, duplicate observations, unusable baselines, malformed API payloads, output preservation, and snapshot provenance. API tests use fixtures and make no live requests.
+
+## What the quantified comparisons show
+
+Relative to September–December 2025, July 2026 mean daily observed volume is lower for seven of eight selected items. Ruby necklaces are the exception. First-versus-last seven-day and 28-day means also show volume declines for those same seven items.
+
+July mean midpoint prices are higher for Blood runes, Dragon bones, and Sharks, and lower for Zulrah's scales. Among the F2P-accessible items, Swordfish prices are higher while Yew logs, Ruby necklaces, and Pie shells are lower. This supports different price patterns across the selected markets rather than uniformly stagnant F2P prices.
+
+The generated report gives each item's changes and the exact comparison windows. Comparing mean levels does not establish a steady within-period decline, reduced volatility, statistical significance, or an enforcement effect. The original narrative remains available for comparison as the study develops.

@@ -20,7 +20,7 @@ Completed: `python run_analysis.py` rebuilds the historical analysis offline, pa
 
 Completed: invalid data fail before historical outputs are written, new snapshots include provenance sidecars, and ten offline tests cover regression and failure cases. The full historical run preserves the processed data and all five chart images.
 
-## 3. Improve the visuals and written analysis
+## 3. Improve the visuals and written analysis — completed
 
 - Compare small-multiple charts with the existing four-line charts.
 - Show a labeled seven-day rolling view alongside the raw daily series.
@@ -28,7 +28,7 @@ Completed: invalid data fail before historical outputs are written, new snapshot
 - Define observed volume, price midpoint, and item grouping clearly.
 - Revise the report around supported findings, preserving the original version for comparison.
 
-Done when every headline finding is linked to a generated table or figure and the limitations remain visible.
+Completed: separate item panels with daily and trailing seven-day views, explicit mean-daily calendar comparisons, seven-versus-28-day endpoint checks, and a generated report linked to both CSV tables. The report highlights exceptions and preserves association-versus-causation limits. The original report and charts remain available.
 
 ## 4. Explore the enforcement question
 
