@@ -2,14 +2,14 @@
 
 The initial public commit preserves the original analysis and historical data. Revisions should be small enough that readers can understand the purpose, inspect the changes, and reproduce the result.
 
-## 1. Simplify the workflow
+## 1. Simplify the workflow — completed
 
 - Replace the numbered script names with clear collection, inspection, processing, and plotting modules.
 - Add one command to reproduce the historical analysis without accessing the network.
 - Make input and output paths explicit and independent of the current working directory.
 - Require an explicit option before live collection replaces an existing dataset.
 
-Done when a fresh checkout generates the processed data and all figures with one documented command.
+Completed: `python run_analysis.py` rebuilds the historical analysis offline, paths are anchored to the project directory, `--show` controls chart windows, and collection saves to a new snapshot while refusing existing output files. Regression checks reproduced the data and all five figures.
 
 ## 2. Strengthen data validation and provenance
 

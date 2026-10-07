@@ -1,6 +1,6 @@
 # OSRS Market Data Analysis
 
-An exploratory study of Old School RuneScape Grand Exchange prices and observed trading volume for eight items. This repository preserves a school project as a runnable baseline for public revision.
+An exploratory study of Old School RuneScape Grand Exchange prices and observed trading volume for eight items. This repository develops a school project through public revisions. The original runnable version is preserved in the `school-project-baseline` tag.
 
 The historical snapshot contains **2,920 daily observations**, with **365 observations per item**, from **August 26, 2025 through August 25, 2026 (UTC)**. It includes no missing values or duplicate item/timestamp pairs.
 
@@ -41,44 +41,60 @@ Or on macOS/Linux:
 source .venv/bin/activate
 ```
 
-Install dependencies, inspect the raw data, rebuild the processed CSV, and generate the charts:
+Install dependencies and reproduce the historical analysis with one command:
 
 ```sh
 python -m pip install -r requirements.txt
-python OSRS_Market_Data_Preprocessing.py
-python OSRS_Market_Data_Preprocessing2.py
-python OSRS_Market_Visuals.py
-python OSRS_Market_Visuals_2.py
+python run_analysis.py
 ```
 
-The scripts display plots interactively and save figures in `figures/`. Close each plot window to continue. For unattended execution, set `MPLBACKEND=Agg` before running the commands.
+This command inspects the saved raw data, rebuilds the processed CSV, and saves all five charts in `figures/` without opening windows or accessing the network. Paths are anchored to the project directory, so the script also works when called by its full path from another folder.
+
+To display the charts while saving them:
+
+```sh
+python run_analysis.py --show
+```
+
+Close each plot window to continue. The historical raw snapshot is left unchanged; the processed CSV and figures are regenerated.
 
 ## Optional live data collection
 
 ```sh
-python OSRS_Market_Data_Getter.py
+python collect.py
 ```
 
-This command requires internet access and **overwrites `data/osrs_market_data_raw.csv`** with the API's currently available daily timeseries. It does not request the fixed dates of the historical study. Rebuilding the processed CSV afterward will therefore produce a new analysis period. Use a separate checkout if you want to preserve the historical snapshot while exploring fresh data.
+This separate command requires internet access and saves new data to `data/snapshots/<UTC timestamp>/osrs_market_data_raw.csv`. It leaves the historical study unchanged. The API returns currently available observations rather than the fixed dates of the study.
 
-The collector identifies itself with a User-Agent. Update that identifier for your own use in accordance with the API's documentation. Live collection was not run when preparing this baseline.
+You can supply a new output path explicitly:
+
+```sh
+python collect.py --output data/my_new_snapshot.csv
+```
+
+The collector refuses an existing output file before making requests and creates its CSV exclusively to avoid accidental replacement. `run_analysis.py` continues to use the historical snapshot; analysis of new snapshots is a future extension.
+
+The collector identifies itself with a User-Agent. Update that identifier for your own use in accordance with the API's documentation. Live requests were not run during this revision; snapshot handling was checked with fixture data.
 
 ## Repository files
 
 | File | Purpose |
 | --- | --- |
-| `OSRS_Market_Data_Getter.py` | Retrieve item mapping and daily market observations |
-| `OSRS_Market_Data_Preprocessing.py` | Inspect raw data and save the price distribution chart |
-| `OSRS_Market_Data_Preprocessing2.py` | Construct dates, midpoint prices, total volume, and indices |
-| `OSRS_Market_Visuals.py` | Save indexed price charts |
-| `OSRS_Market_Visuals_2.py` | Save indexed volume charts |
+| `run_analysis.py` | Reproduce the complete historical analysis |
+| `config.py` | Shared paths, item groups, and API URL |
+| `collect.py` | Collect a separate new market snapshot |
+| `inspect_data.py` | Inspect raw data and save the price distribution chart |
+| `process.py` | Construct dates, midpoint prices, total volume, and indices |
+| `plot.py` | Save indexed price and volume charts |
 | `data/` | Fixed raw snapshot and reproducible processed data |
-| `figures/` | Five regenerated charts |
+| `figures/` | Five generated charts |
 
-The numbered script names are preserved from the school project. The Word submission and contextual enforcement workbook remain local; they are not runtime dependencies.
+The original numbered scripts are available in the `school-project-baseline` tag. The Word submission and contextual enforcement workbook remain local; they are not runtime dependencies.
 
 ## Sources and reproducibility
 
 Market data were collected from the [OSRS Wiki real-time price API](https://oldschool.runescape.wiki/w/RuneScape:Real-time_Prices), using its `/mapping` and `/timeseries` endpoints with `timestep=24h`. The stored timestamps establish the observation period; the original collection time and original dependency versions were not recorded. Third-party data retain their source terms.
 
 The original report contains its own references and an acknowledgment of ChatGPT assistance. That acknowledgment is preserved in the Markdown version. The public baseline preparation verified all four offline scripts, reproduced the processed CSV within floating-point tolerance, and regenerated five figures. The dependency list is not an exact lockfile of the original school environment.
+
+The first workflow revision was verified from outside the project directory with network requests disabled. It reproduced the processed CSV within floating-point tolerance and all five figures pixel for pixel. Separate fixture checks verified that collection refuses existing files and defaults to a new snapshot directory.
